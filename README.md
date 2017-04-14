@@ -19,7 +19,7 @@ Add it in your root build.gradle at the end of repositories:
 Add the dependencies
 
 	dependencies {
-	        compile 'com.colorssoftware.library:library:1.0.0'
+	        compile 'com.colorssoftware.library:library:1.0.2'
 	}
 
 # Usage
