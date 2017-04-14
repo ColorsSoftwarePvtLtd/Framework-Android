@@ -1,6 +1,7 @@
 # LogR
 LogR is used for Login and Registration.
 [ ![Download](https://api.bintray.com/packages/braj24/maven/LogR/images/download.svg) ](https://bintray.com/braj24/maven/LogR/_latestVersion)
+image::https://api.bintray.com/packages/braj24/maven/LogR/images/download.svg[link="https://bintray.com/braj24/mav
 
 # Download
 
