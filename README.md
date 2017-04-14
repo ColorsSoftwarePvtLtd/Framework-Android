@@ -3,6 +3,8 @@ LogR is used for Login and Registration.
 
 [ ![Download](https://api.bintray.com/packages/braj24/maven/LogR/images/download.svg) ](https://bintray.com/braj24/maven/LogR/_latestVersion)
 
+[![](https://jitpack.io/v/ColorsSoftwarePvtLtd/Framework-Android.svg)](https://jitpack.io/#ColorsSoftwarePvtLtd/Framework-Android)
+
 # Download
 
 Add it in your root build.gradle at the end of repositories:
