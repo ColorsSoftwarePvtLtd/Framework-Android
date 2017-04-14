@@ -23,41 +23,49 @@ Add the dependencies
 # Usage
 
 
-
-    LogR l=new LogR();
-                LogR.allowAllSSL();
-                l.login(mUsername.getText().toString().trim(), mPassword.getText().toString().trim(),      "https://colourssoftware.com:5443/customer/login", new LogR.AsyncResponse() {
+    //for Login
+    LogR logr=new LogR(); // Call LogR class
+    LogR.allowAllSSL(); //Allowing all the certificates
+    logr.login("username", "password","put login url", new LogR.AsyncResponse() {
                     /**
                      * Response coming from server
                      * Use it in your code
                      * @param out
                      */
                     @Override
-                    public void onSuccess(String out) {
-                        try {
-                            if(!out.isEmpty()){
-                                JSONObject jsonObject=new JSONObject(out);
-                                JSONObject jsonObject1=jsonObject.getJSONObject("customer");
-                                id=jsonObject1.getString("_id");
-                                String username=jsonObject1.getString("username");
-                                String email=jsonObject1.getString("email");
-                                mResponse.setText("Customer Id: " + id + "\n"+"Name: " +username +"\n"+"Email: " +email);
-                            //Passing customer id to Billing
-                            Intent intent=new Intent(LoginActivity.this,BillingActivity.class);
-                            intent.putExtra("id",id);
-                            startActivity(intent);
-                            }
-                            else {
-                                Toast.makeText(LoginActivity.this, "Response is empty", Toast.LENGTH_SHORT).show();
-                            }
-
-                        } catch (JSONException e) {
-                            e.printStackTrace();
-                        }
-
+                    public void onSuccess(String response) {
+                       Toast.makeText(this,out,Toast.LENGTH_LONG).show();
                     }
                     @Override
-                    public void onFailure(String fail) {
+                    public void onFailure(String failure) {
 
                     }
                 });
+		
+    //for registration	
+    logr.register("username", "password", "firstname","lastname", "email","put registration url", new LogR.AsyncResponse() {
+                    @Override
+                    public void onSuccess(String response) {
+                        Toast.makeText(this, response, Toast.LENGTH_SHORT).show();
+                    }
+                    @Override
+                    public void onFailure(String failure) {
+                        Toast.makeText(this, failure, Toast.LENGTH_SHORT).show();
+                    }
+                });
+		
+# LICENSE
+    Copyright [2017] [Colors Software Pvt Ltd]
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+		
