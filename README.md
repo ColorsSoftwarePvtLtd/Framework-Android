@@ -21,6 +21,16 @@ Add the dependencies
 	dependencies {
 	        compile 'com.colorssoftware.library:library:1.0.2'
 	}
+	
+or maven
+
+    <dependency>
+    <groupId>com.colorssoftware.library</groupId>
+    <artifactId>library</artifactId>
+    <version>1.0.2</version>
+    <type>pom</type>
+    </dependency>
+
 
 # Usage
 
